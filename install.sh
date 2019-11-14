@@ -43,7 +43,6 @@ create_symlinks() {
 }
 
 setup_brew() {
-
   command_exists brew || {
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
