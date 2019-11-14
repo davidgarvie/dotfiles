@@ -2,6 +2,7 @@
 
 REPO_DIR="$HOME/projects/dotfiles"
 BREW_INSTALLS_FILE="$REPO_DIR/brew_bundle_dump"
+GIT_URL="git@github.com:davidgarvie/dotfiles.git"
 
 command_exists() {
 	command -v "$@" >/dev/null 2>&1
@@ -27,18 +28,25 @@ clone_repo() {
 		exit 1
 	}
 
-  mkdir -p "$REPO_DIR"
+  
 
-  git clone --depth=1 git@github.com:davidgarvie/dotfiles.git "$REPO_DIR" || {
+  if [ ! -d "$REPO_DIR" ] ; then
+    mkdir -p "$REPO_DIR"
+    git clone --depth=1 $GIT_URL "$REPO_DIR" || {
     printf "Error: git clone of configuration repo failed\n"
     exit 1
   }
+  else
+    cd "$REPO_DIR"
+    git pull $GIT_URL
+  fi
+
   echo "Succesfully cloned repo"
 }
 
 create_symlinks() {
   echo "Creating symlinks between dotfiles folder and home"
-  ln -sv "$REPO_DIR/.zshrc" ~
+  ln -sfn "$REPO_DIR/.zshrc" ~
   echo "Succesfully created symlinks"
 }
 
@@ -58,12 +66,20 @@ setup_brew() {
   brew upgrade && brew cleanup
 }
 
+setup_terminal() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+  sudo sh -c "echo $(which zsh) >> /etc/shells"
+  chsh -s $(which zsh)
+}
+
 main() {
   prompt_user
   clone_repo
   create_symlinks
   setup_brew
+  setup_terminal
   "$REPO_DIR/cron_jobs.sh"
+  echo "Finished setting up. You will need to open a new terminal to use oh-my-zsh."
 }
 
 main
