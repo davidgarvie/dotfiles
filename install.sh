@@ -30,11 +30,16 @@ clone_repo() {
   mkdir -p "$REPO_DIR"
 
   git clone --depth=1 git@github.com:davidgarvie/dotfiles.git "$REPO_DIR" || {
-  printf "Error: git clone of configuration repo failed\n"
-  exit 1
+    printf "Error: git clone of configuration repo failed\n"
+    exit 1
+  }
+  echo "Succesfully cloned repo"
 }
 
-  echo "Succesfully cloned repo"
+create_symlinks() {
+  echo "Creating symlinks between dotfiles folder and home"
+  ln -sv "$REPO_DIR/.zshrc" ~
+  echo "Succesfully created symlinks"
 }
 
 setup_brew() {
@@ -57,6 +62,7 @@ setup_brew() {
 main() {
   prompt_user
   clone_repo
+  create_symlinks
   setup_brew
   "$REPO_DIR/cron_jobs.sh"
 }
