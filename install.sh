@@ -1,6 +1,7 @@
 #!/bin/sh
 
-REPO_DIR="$HOME/projects/dotfiles2"
+REPO_DIR="$HOME/projects/dotfiles"
+BREW_INSTALLS_FILE="$REPO_DIR/brew_bundle_dump"
 
 command_exists() {
 	command -v "$@" >/dev/null 2>&1
@@ -36,9 +37,28 @@ clone_repo() {
   echo "Succesfully cloned repo"
 }
 
+setup_brew() {
+
+  command_exists brew || {
+    echo "Installing homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  }
+
+  export HOMEBREW_NO_ANALYTICS=1
+  export HOMEBREW_NO_INSECURE_REDIRECT=1
+  export HOMEBREW_CASK_OPTS=--require-sha
+
+  brew update-reset && brew update
+  brew tap Homebrew/bundle
+  brew bundle install --file="$BREW_INSTALLS_FILE"
+  brew upgrade && brew cleanup
+}
+
 main() {
   prompt_user
   clone_repo
+  setup_brew
+  "$REPO_DIR/cron_jobs.sh"
 }
 
 main
