@@ -47,6 +47,7 @@ clone_repo() {
 create_symlinks() {
   echo "Creating symlinks between dotfiles folder and home"
   ln -sfn "$REPO_DIR/.zshrc" ~
+  ln -sfn "$REPO_DIR/.p10k.zsh" ~
   echo "Succesfully created symlinks"
 }
 
