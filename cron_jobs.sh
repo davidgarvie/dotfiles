@@ -4,6 +4,7 @@ REPO_DIR="$HOME/projects/dotfiles"
 THIS_SCRIPT_FULL_PATH="$REPO_DIR/$(basename -- "$0")"
 
 /usr/local/bin/brew bundle dump --force --file="$REPO_DIR/brew_bundle_dump"
+/usr/local/bin/code --list-extensions > "$REPO_DIR/vscode/extensions"
 
 cd "$REPO_DIR" || exit
 if ! git diff --quiet HEAD || git status --short; then
