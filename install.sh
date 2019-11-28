@@ -71,18 +71,18 @@ setup_terminal() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
   sudo sh -c "echo $(which zsh) >> /etc/shells"
   chsh -s $(which zsh)
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/themes/powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 main() {
   prompt_user
   clone_repo
-  create_symlinks
   setup_brew
   setup_terminal
+  create_symlinks
   "$REPO_DIR/cron_jobs.sh"
-  echo "Finished setting up. You will need to open a new terminal to use oh-my-zsh."
+  echo "Finished setting up. You will need to open a new terminal."
 }
 
 main
