@@ -20,7 +20,7 @@ prompt_user() {
   esac
 }
 
-clone_repo() {
+clone_repo() {Ï
 	echo "Cloning dotfiles repo"
 
 	command_exists git || {
