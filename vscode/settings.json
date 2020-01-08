@@ -1,4 +1,37 @@
 {
+    // editor
+    "editor.fontFamily": "'Dank Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 20,
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+  
+  
+    // plugins
+    "eslint.autoFixOnSave": false,
+  
+    // source control
+    "git.autofetch": true,
+    "git.confirmSync": false,
+  
+    // terminal
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.shell.linux": "zsh",
+    "terminal.integrated.shell.osx": "zsh",
+  
+    // vscode
+    "breadcrumbs.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "telemetry.enableTelemetry": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.startupEditor": "none",
     "window.zoomLevel": 0,
-    "editor.fontSize": 16
-}
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+  }
