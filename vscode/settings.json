@@ -23,6 +23,7 @@
   
     // vscode
     "breadcrumbs.enabled": true,
+    "debug.node.autoAttach": "on",
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "telemetry.enableTelemetry": false,
