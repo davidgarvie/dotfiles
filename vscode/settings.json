@@ -7,11 +7,8 @@
     "editor.renderWhitespace": "all",
     "editor.tabSize": 2,
   
-  
-    // plugins
-    "eslint.autoFixOnSave": false,
-  
     // source control
+    "diffEditor.ignoreTrimWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
   
@@ -23,16 +20,10 @@
   
     // vscode
     "breadcrumbs.enabled": true,
-    "debug.node.autoAttach": "on",
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "telemetry.enableTelemetry": false,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.startupEditor": "none",
     "window.zoomLevel": 0,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": false
-    },
-    "diffEditor.ignoreTrimWhitespace": true,
+    "workbench.colorTheme": "Night Owl",
+    "workbench.startupEditor": "none",
   }
