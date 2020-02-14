@@ -1,7 +1,11 @@
 dbaeumer.vscode-eslint
 eamodio.gitlens
-jpoissonnier.vscode-styled-components
+idbartosz.darkpp-italic
+medo64.render-crlf
 ms-azuretools.vscode-docker
-ms-python.python
+ms-kubernetes-tools.vscode-kubernetes-tools
+ms-vscode.Go
 msjsdiag.debugger-for-chrome
-sdras.night-owl
+Prisma.vscode-graphql
+redhat.vscode-yaml
+techer.open-in-browser
