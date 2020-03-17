@@ -2,7 +2,6 @@
 
 REPO_DIR="$HOME/projects/dotfiles"
 BREW_INSTALLS_FILE="$REPO_DIR/brew_bundle_dump"
-VSCODE_EXTENSIONS_FILE="$REPO_DIR/vscode/extensions"
 GIT_URL="git@github.com:davidgarvie/dotfiles.git"
 
 command_exists() {
@@ -75,9 +74,6 @@ setup_terminal() {
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
-setup_vscode() {
-  cat $VSCODE_EXTENSIONS_FILE | xargs /usr/local/bin/code --install-extension
-}
 
 main() {
   prompt_user
@@ -86,7 +82,7 @@ main() {
   setup_terminal
   create_symlinks
   "$REPO_DIR/cron_jobs.sh"
-  setup_vscode
+  "$REPO_DIR/vscode.sh" 
   echo "Finished setting up. You will need to open a new terminal."
 }
 

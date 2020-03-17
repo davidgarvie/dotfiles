@@ -29,9 +29,4 @@
     // plugins
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "vs-kubernetes": {
-      "vs-kubernetes.helm-path": "/Users/davidgarvie/.vs-kubernetes/tools/helm/darwin-amd64/helm",
-      "vs-kubernetes.draft-path": "/Users/davidgarvie/.vs-kubernetes/tools/draft/darwin-amd64/draft",
-      "vs-kubernetes.minikube-path": "/Users/davidgarvie/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    },
   }

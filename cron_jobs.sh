@@ -15,9 +15,9 @@ if ! git diff --quiet HEAD || git status --short; then
   git push origin master
 fi
 
-cat $REPO_DIR/vscode/extensions | xargs -L1 code --install-extension
+$REPO_DIR/vscode.sh
 
 # Make this script call itself hourly from the crontab, if it isn't already.
-if ! crontab -l | grep "$THIS_SCRIPT_FULL_PATH"; then
-  (crontab -l ; echo "0 * * * * $THIS_SCRIPT_FULL_PATH > /dev/null 2>&1") | sort - | uniq - | crontab - 2>&1
-fi
+# if ! crontab -l | grep "$THIS_SCRIPT_FULL_PATH"; then
+#   (crontab -l ; echo "0 * * * * $THIS_SCRIPT_FULL_PATH > /dev/null 2>&1") | sort - | uniq - | crontab - 2>&1
+# fi
