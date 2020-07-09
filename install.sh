@@ -82,7 +82,6 @@ main() {
   setup_terminal
   create_symlinks
   "$REPO_DIR/cron_jobs.sh"
-  "$REPO_DIR/vscode.sh" 
   echo "Finished setting up. You will need to open a new terminal."
 }
 
