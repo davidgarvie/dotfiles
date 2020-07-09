@@ -71,8 +71,10 @@
 	<string>995 828 400 129 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 768 620 392 0 0 2560 1417 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>230 734 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>66 524 810 552 0 0 2560 1417 </string>
+	<string>0 0 2560 1417 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -710,28 +712,30 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.3.8</string>
+		<string>3.3.7</string>
+		<string>3.3.6</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Dank Mono</string>
 		<string>MesloLGS NF</string>
 		<string>Monaco</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1440, -780}, {1440, 2560}}</string>
+		<string>{{-1440, 0}, {1440, 2560}}</string>
 		<key>topLeft</key>
-		<string>{-1155, 875}</string>
+		<string>{-1193, 1439}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>2C667FCC-92F0-45A1-A271-D09A4E593566</string>
 	<key>NoSyncLastTipTime</key>
-	<real>602620389.11674702</real>
+	<real>607440379.63301396</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>37</integer>
+	<integer>63</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1476,19 +1480,32 @@
 	<real>593822021.17584598</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
-		<string>0004</string>
-		<string>0000</string>
 		<string>0010</string>
-		<string>0007</string>
-		<string>0003</string>
-		<string>0006</string>
-		<string>0002</string>
-		<string>000</string>
+		<string>0015</string>
+		<string>0004</string>
 		<string>0009</string>
-		<string>0005</string>
-		<string>0001</string>
-		<string>0008</string>
+		<string>0013</string>
+		<string>0002</string>
+		<string>0018</string>
+		<string>0007</string>
+		<string>0022</string>
 		<string>0011</string>
+		<string>0000</string>
+		<string>0016</string>
+		<string>0005</string>
+		<string>0020</string>
+		<string>0014</string>
+		<string>0003</string>
+		<string>0019</string>
+		<string>0008</string>
+		<string>0023</string>
+		<string>0012</string>
+		<string>0001</string>
+		<string>000</string>
+		<string>0017</string>
+		<string>0006</string>
+		<string>0021</string>
+		<string>0024</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -1538,18 +1555,24 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-05T18:33:08Z</date>
+	<date>2020-04-01T13:26:19Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>4097784890</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1584529664</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 </dict>
 </plist>
