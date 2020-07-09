@@ -19,9 +19,10 @@ alias k="kubectl"
 alias rm="trash"
 alias top="vtop"
 
-# Hide post install adverts via npm
+# Stop the console doing stuff I don't want it to
 ADBLOCK=true
 DISABLE_OPENCOLLECTIVE=true
+DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

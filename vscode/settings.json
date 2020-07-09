@@ -1,5 +1,6 @@
 {
   // editor
+  "editor.codeLens": false,
   "editor.fontFamily": "'Dank Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 20,
