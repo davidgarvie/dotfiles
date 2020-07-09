@@ -1,7 +1,9 @@
 # !/bin/bash
 
 REPO_DIR="$HOME/projects/dotfiles"
+BREW_INSTALLS_FILE="$REPO_DIR/brew_bundle_dump"
 THIS_SCRIPT_FULL_PATH="$REPO_DIR/$(basename -- "$0")"
+VSCODE_EXTENSIONS_FILE="$REPO_DIR/vscode/extensions"
 
 /usr/local/bin/brew bundle dump --force --file="$REPO_DIR/brew_bundle_dump"
 /usr/local/bin/code --list-extensions > "$REPO_DIR/vscode/extensions"
@@ -14,7 +16,9 @@ if ! git diff --quiet HEAD || git status --short; then
   git push origin master
 fi
 
-$REPO_DIR/update.sh
+cat $VSCODE_EXTENSIONS_FILE | xargs /usr/local/bin/code --install-extension
+
+brew bundle install --file="$BREW_INSTALLS_FILE"
 
 # Make this script call itself hourly from the crontab, if it isn't already.
 if ! crontab -l | grep "$THIS_SCRIPT_FULL_PATH"; then
