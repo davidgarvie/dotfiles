@@ -30,5 +30,6 @@
   // plugins
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "sqltools.useNodeRuntime": true
 }
