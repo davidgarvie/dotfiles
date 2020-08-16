@@ -24,7 +24,7 @@
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "telemetry.enableTelemetry": false,
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 5,
   "workbench.startupEditor": "none",
 
   // plugins
