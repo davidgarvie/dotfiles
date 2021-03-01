@@ -31,5 +31,6 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "sqltools.useNodeRuntime": true
+  "sqltools.useNodeRuntime": true,
+  "workbench.colorTheme": "GitHub Dark"
 }
