@@ -10,19 +10,22 @@ This setup should sync my shell environment across hosts and allow bootstrapping
 
 ---
 
-## Instructions
+## Installation on remote hosts
 
 Install chezmoi binary and clone the dotfiles repo
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply davidgarvie
 ```
 
-Apply to the local machine
+## Useful commands
+
+Fetch remote changes and apply locally
+```
+chezmoi update
+```
+
+Update local configuration to match the target state (does not pull changes)
 ```
 chezmoi apply
 ```
 
-Set zsh as the default shell
-```
-chsh -s $(which zsh)
-```
