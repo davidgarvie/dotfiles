@@ -9,7 +9,7 @@ echo "Starting bootstrapping process..."
 if command -v apt &> /dev/null; then
   echo "Found 'apt', installing system dependencies..."
   sudo apt-get update
-  sudo apt-get install -y zsh git curl build-essential
+  sudo apt-get install -y zsh git curl build-essential fzf
 else
   echo "Warning: 'apt' not found. Skipping system dependency installation."
   echo "Please ensure 'zsh', 'git', and 'curl' are installed manually."
