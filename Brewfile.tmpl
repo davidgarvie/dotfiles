@@ -2,6 +2,7 @@ tap "dbcli/tap"
 brew "chezmoi"
 brew "litecli"
 brew "starship"
-{{- if eq .chezmoi.config.data.machine_type "main-pc" }}
+
+{{- if and .chezmoi.config.data (eq .chezmoi.config.data.machine_type "main-pc") }}
 brew "yt-dlp"
 {{- end }}

@@ -12,14 +12,9 @@ This setup should sync my shell environment across hosts and allow bootstrapping
 
 ## Instructions
 
-Install chezmoi binary
+Install chezmoi binary and clone the dotfiles repo
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)"
-```
-
-Clone the dotfiles repo
-```bash
-chezmoi init https://github.com/davidgarvie/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply davidgarvie
 ```
 
 Apply to the local machine
