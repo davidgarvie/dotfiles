@@ -1,5 +1,8 @@
 #!/bin/sh
 
+{{ $data := .chezmoi.config.data | default dict }}
+{{ $host_type := (index $data "host_type") | default "server" }}
+
 set -e
 
 echo "Starting bootstrapping process..."
@@ -9,7 +12,7 @@ echo "Starting bootstrapping process..."
 if command -v apt &> /dev/null; then
   echo "Found 'apt', installing system dependencies..."
   sudo apt-get update
-  sudo apt-get install -y zsh git curl build-essential fzf
+  sudo apt-get install -y zsh git curl build-essential fzf bat
 else
   echo "Warning: 'apt' not found. Skipping system dependency installation."
   echo "Please ensure 'zsh', 'git', and 'curl' are installed manually."
@@ -32,12 +35,28 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+
+{{- if eq $host_type "dev" }}
+echo "Checking for SDKMAN..."
+if [ -d "$HOME/.sdkman" ]; then
+  echo "SDKMAN is already installed. Skipping installation."
+else
+  echo "Installing SDKMAN..."
+  # Use non-interactive flags:
+  # rcupdate=false (don't modify .zshrc, chezmoi handles that)
+  # ci=true (answer yes to all prompts)
+  curl -s "https://get.sdkman.io?rcupdate=false&ci=true" | bash
+fi
+{{- end }}
+
+
 # Install packages
 echo "Installing packages from Brewfile..."
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle install --file=~/Brewfile
 
-echo "Bootstrapping complete."
 echo "---"
+echo "Bootstrapping complete."
 echo "To make Zsh your default shell, run this command and then log out:"
 echo "chsh -s $(which zsh)"
+echo "---"

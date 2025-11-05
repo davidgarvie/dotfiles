@@ -1,8 +1,11 @@
+{{- $data := .chezmoi.config.data | default dict -}}
+{{- $host_name := (index $data "host_name") | default "new_client" -}}
+
 tap "dbcli/tap"
 brew "chezmoi"
 brew "litecli"
 brew "starship"
 
-{{- if and .chezmoi.config.data (eq .chezmoi.config.data.machine_type "main-pc") }}
+{{- if eq $host_name "main_pc" }}
 brew "yt-dlp"
 {{- end }}
