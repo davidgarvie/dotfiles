@@ -1,0 +1,42 @@
+[init]
+	defaultBranch = main
+[user]
+	name = David Garvie
+	email = garvie88@gmail.com
+[core]
+	editor = code --wait
+	excludesfile = /home/david/.gitignore
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[merge]
+	conflictstyle = diff3
+[pull]
+	rebase = true
